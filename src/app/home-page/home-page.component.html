@@ -1,0 +1,54 @@
+<nav class="mb-5">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+            {{title}}
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a >Se connecté</a></li>
+            <li><a href="badges.html">S'inscrire</a></li>
+            <li><a href="collapsible.html">Reserver</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container " id="containerCards">
+    <nav>
+        <div class="nav-wraper  ">
+            <h2 class="center">Film Selection</h2>
+        </div>
+ 
+    </nav>
+    
+
+  
+
+    <div class="row">
+
+        <div  *ngFor="let movies of listMovie" >
+            <div class="card horizontal">
+                <div class="card-image">
+                    <img src={{movies.thumbnail}}>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content center">
+                        <p> titre :{{movies.title}}</p>
+                        <p>date de sortie : <small>{{movies.year| date:"dd/mm/yyyy"}}</small></p>
+                        <p> casting : <small>{{movies.cast}} </small></p>
+                        <p>Genre : {{movies.genres}}</p>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <button class="col s-3 offset-s3 waves-effect waves-light btn " (click)="goMessage(movies.title)">
+                                commenté
+                            </button>
+                            <button class="col s-3 offset-s3 waves-light btn  mt-22">
+                                reserver
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
