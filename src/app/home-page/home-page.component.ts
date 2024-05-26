@@ -39,7 +39,9 @@ avis: any[] = [];
     if(message != undefined){
     this.route.navigate(['./commentaire/'+message])
     }
-    
+   }
+   goBooking(){
+      this.route.navigate(['/booking'])
    }
 
 }
